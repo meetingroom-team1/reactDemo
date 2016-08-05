@@ -9,24 +9,26 @@
 </head>
 <body>
 <div id="example"></div>
-<div id="example2"></div>
-<div id="example3"></div>
 <script type="text/babel">
+    let NotesList = React.createClass({
+        render:function(){
+            return (
+                    <ol>
+                        {
+                            React.Children.map(this.props.children,function(child){
+                                    return <li>{child}</li>;
+                            })
+                        }
+                    </ol>
+            );
+       }
+    });
     ReactDOM.render(
-            <h1>hello,夏雨</h1>,
+            <NotesList>
+                <span>hello</span>
+                <span>world</span>
+            </NotesList>,
             document.getElementById('example')
-    );
-    ReactDOM.render(
-            <h1>Hello, world!</h1>,
-            document.getElementById('example')
-    );
-    ReactDOM.render(
-            <h1>Hello, wlulaorld!</h1>,
-            document.getElementById('example3')
-    );
-    React.render(
-            <p>Here I am!</p>,
-            document.getElementById('example2')
     );
 </script>
 </body>
