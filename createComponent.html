@@ -10,15 +10,17 @@
 <body>
 <div id="useClass"></div>
 <script type="text/babel">
+    let MyComponent=React.createClass({
+        render:function(){
+            return (
+                    <div>this is a Component.</div>
+            )
+        }
+    });
     React.render(
-            <div>
-                <span>hello</span>
-                <span>world</span>
-            </div>,
+            <MyComponent />,
             document.getElementById('useClass')
-    );
-
-
+    )
 
 </script>
 </body>
